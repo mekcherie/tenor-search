@@ -1,5 +1,6 @@
 // Require Libraries
 const express = require('express');
+// app.use(express.static('public'));
 
 const Tenor = require("tenorjs").client({
   // Replace with your own key
