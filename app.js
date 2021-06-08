@@ -1,6 +1,5 @@
 // Require Libraries
 const express = require('express');
-// app.use(express.static('public'));
 
 const Tenor = require("tenorjs").client({
   // Replace with your own key
@@ -10,12 +9,12 @@ const Tenor = require("tenorjs").client({
 });
 // App Setup
 const app = express();
-
 // Middleware
 const exphbs  = require('express-handlebars');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+app.use(express.static('public'));
 // Routes
   app.get('/', (req, res) => {
     term = ""
